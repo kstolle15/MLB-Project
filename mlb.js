@@ -541,3 +541,15 @@ var teamInfo = [
         "worldSeriesWins":8
     }
 ]
+
+function getTeam(team){
+  for(i=0;i<teamInfo.length;i++){
+   if (team === teamInfo[i].team){
+     return teamInfo[i];
+   }
+  }
+}
+
+function output(team){
+
+}
