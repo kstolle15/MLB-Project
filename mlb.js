@@ -551,5 +551,6 @@ function getTeam(team){
 }
 
 function output(team){
-
+  var infoDiv ="<h3>" + team.team + "</h3>"+
+      "<img src=" + team.stadiumName + ".JPG>";
 }
