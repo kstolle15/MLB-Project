@@ -7,3 +7,9 @@ img {
 map {
   position: absolute;
 }
+
+area:hover {
+  background-color: yellow;
+}
+
+
