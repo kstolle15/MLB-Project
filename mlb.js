@@ -256,7 +256,7 @@ var teamInfo = [
         "team":"Baltimore Orioles",
         "location":"Baltimore, MD",
         "currentLeague":"American League",
-        "stadiumName":"Oriole Park",
+        "stadiumName":"Camden Yards",
         "stadiumAge":25,
         "winningestManager":"Earl Weaver",
         "yearsAsManager":"1968-1982;1985-1986",
@@ -551,6 +551,20 @@ function getTeam(team){
 }
 
 function output(team){
+  $("#teamInfo").empty();
   var infoDiv ="<h3>" + team.team + "</h3>"+
-      "<img src=" + team.stadiumName + ".JPG>";
+      "<img src=" + team.stadiumName + ".jpg><h5>" + team.stadiumName + ", " + team.stadiumAge + " years </h5>" +
+      "<table><tbody><tr><td> Current League: </td><td>" + team.currentLeague + "</td></tr>" +
+      "<tr><td> Playoff Appearances: </td><td>" + team.playoffAppearences + "</td></tr>" +
+      "<tr><td> Pennant Wins: </td><td>" + team.pennantWins + "</td></tr>" +
+      "<tr><td> World Series Wins: </td><td>" + team.worldSeriesWins + "</td></tr></tbody></table>" +
+      "<table><thead><th> Winningest Manager: </th><th>" + team.winningestManager + "</th></thead>" +
+      "<tbody><tr><td> Years as Manager: </td><td>" + team.yearsAsManager + "</td></tr>" +
+      "<tr><td> Career Wins: </td><td>" + team.careerWins + "</td></tr>" +
+      "<tr><td> Win Percentage: </td><td>" + team.winPercentage + "</td></tr></tbody></table>" +
+      "<table><thead><th> Best Pitcher: </th><th>" + team.bestPitcher + "</th></thead>" +
+      "<tbody><tr><td> ERA: </td><td>" + team.pitcherERA + "</td></tr></tbody></table>" +
+      "<table><thead><th> Best Hitter: </th><th>" + team.bestHitter + "</th></thead>" +
+      "<tbody><tr><td> Batting Average: </td><td>" + team.battingAvg + "</td></tr></tbody></table>";
+  $("#teamInfo").append(infoDiv);
 }
