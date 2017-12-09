@@ -254,7 +254,7 @@ var teamInfo = [{
 			"team": "Baltimore Orioles",
 			"location": "Baltimore, MD",
 			"currentLeague": "American League",
-			"stadiumName": "Oriole Park",
+			"stadiumName": "Camden Yards",
 			"stadiumAge": 25,
 			"winningestManager": "Earl Weaver",
 			"yearsAsManager": "1968-1982;1985-1986",
@@ -540,21 +540,23 @@ var teamInfo = [{
 		}];
 
 
-function getTeam(team){
+function getTeam(team){  
+  var thisTeam;
   if (team === "Chicago"|| team === "New York"|| team === "San Francisco"|| team === "Los Angeles"){
     team = dosEquipos(team);
   }
   for(var i = 0;i<teamInfo.length;i++){
    if (team === teamInfo[i].team){
-     return teamInfo[i];
+     thisTeam = teamInfo[i];
    }
-  }
+  } 
+  output(thisTeam);
 }
 
 function output(team){
   $("#teamInfo").empty();
   var infoDiv ="<h3>" + team.team + "</h3>"+
-      "<img src=" + team.stadiumName + ".jpg><h5>" + team.stadiumName + ", " + team.stadiumAge + " years </h5>" +
+      "<img src='Real Stadium Pics/" + team.stadiumName + ".jpg'><h5>" + team.stadiumName + ", " + team.stadiumAge + " years </h5>" +
       "<table><tbody><tr><td> Current League: </td><td>" + team.currentLeague + "</td></tr>" +
       "<tr><td> Playoff Appearances: </td><td>" + team.playoffAppearences + "</td></tr>" +
       "<tr><td> Pennant Wins: </td><td>" + team.pennantWins + "</td></tr>" +
@@ -585,5 +587,12 @@ function dosEquipos(city){
     team= prompt("Dodgers or Angels");
      return team;
  }
+}  
+
+function test(){  
+	$("#teamInfo").empty();
+	var t = "<p>this is a test</p>"; 
+	$("#teamInfo").append(t);
 }
+
 
