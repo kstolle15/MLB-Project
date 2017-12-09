@@ -4,6 +4,11 @@ img {
   height: 100%;
 }
 
+table {
+ margin-top: 10px;
+ margin-bottom: 10px;
+}
+
 map {
   position: absolute;
 }
