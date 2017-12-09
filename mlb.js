@@ -564,7 +564,7 @@ function output(team){
       "<tbody><tr><td> ERA: </td><td>" + team.pitcherERA + "</td></tr></tbody></table>" +
       "<table><thead><th> Best Hitter: </th><th>" + team.bestHitter + "</th></thead>" +
       "<tbody><tr><td> Batting Average: </td><td>" + team.battingAvg + "</td></tr></tbody></table>";
-  $("#teamInfo").append(infoDiv);
+  $("#teamInfo").append(infoDiv).hide()slideDown(2000);
 }
 
 function test(){
