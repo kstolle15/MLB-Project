@@ -544,7 +544,7 @@ function getTeam(team){
   if (team === "Chicago"|| team === "New York"|| team === "San Francisco"|| team === "Los Angeles"){
     team = dosEquipos(team);
   }
-  for(i=0;i<teamInfo.length;i++){
+  for(var i = 0;i<teamInfo.length;i++){
    if (team === teamInfo[i].team){
      return teamInfo[i];
    }
@@ -567,7 +567,7 @@ function output(team){
       "<tbody><tr><td> ERA: </td><td>" + team.pitcherERA + "</td></tr></tbody></table>" +
       "<table><thead><th> Best Hitter: </th><th>" + team.bestHitter + "</th></thead>" +
       "<tbody><tr><td> Batting Average: </td><td>" + team.battingAvg + "</td></tr></tbody></table>";
-  $("#teamInfo").append(infoDiv).hide()slideDown(2000);
+  $("#teamInfo").append(infoDiv).hide().slideDown(2000);
 }
 
 function dosEquipos(city){
@@ -575,16 +575,13 @@ function dosEquipos(city){
   if (city === "Chicago"){
    team= prompt("Cubs or White Sox");
     return team;
- }
-  else if (city === "New York"){
+ }else if (city === "New York"){
     team= prompt("Mets or Yankees");
      return team;
-  }
-  else if (city === "San Francisco"){
+  }else if (city === "San Francisco"){
     team= prompt("As or Giants");
      return team;
-  }
-  else {
+  }else {
     team= prompt("Dodgers or Angels");
      return team;
  }
