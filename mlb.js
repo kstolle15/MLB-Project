@@ -541,6 +541,9 @@ var teamInfo = [{
 
 
 function getTeam(team){
+  if (team === "Chicago"|| team === "New York"|| team === "San Francisco"|| team === "Los Angeles"){
+    team = dosEquipos(team);
+  }
   for(i=0;i<teamInfo.length;i++){
    if (team === teamInfo[i].team){
      return teamInfo[i];
@@ -567,8 +570,23 @@ function output(team){
   $("#teamInfo").append(infoDiv).hide()slideDown(2000);
 }
 
-function test(){
-  var t = "<p>this is a test</p>";
-  $("#teamInfo").append(infoDiv);
+function dosEquipos(city){
+ var team = "";
+  if (city === "Chicago"){
+   team= prompt("Cubs or White Sox");
+    return team;
+ }
+  else if (city === "New York"){
+    team= prompt("Mets or Yankees");
+     return team;
+  }
+  else if (city === "San Francisco"){
+    team= prompt("As or Giants");
+     return team;
+  }
+  else {
+    team= prompt("Dodgers or Angels");
+     return team;
+ }
 }
 
