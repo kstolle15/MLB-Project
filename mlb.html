@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap-theme.css"/>
     <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
-
+	
     <script src="mlb.js"></script>
     <link rel="stylesheet" href="mlb.css"/>
   </head>
-  <body>
+  <body id="content">
 	<div class="col-md-8">
 		<img src="mapWithoutLocations.JPG" width="882" height="592" usemap="#usa">
         <map name="usa">
-          <area id="baltimore" shape="circle" coords="736,280,13" onclick="getTeam('Baltimore Orioles')"/>
+		  <area class="tooltip" id="baltimore" shape="circle" coords="736,280,13" onclick="getTeam('Baltimore Orioles')"/>
           <area id="boston" shape="poly" coords="799,185,790,203,804,211,818,206,819,200,810,198,807,185,799,185" onclick="getTeam('Boston Red Sox')"/>
           <area id="chicagoC" shape="circle" coords="578,251,11" onclick="getTeam('Chicago Cubs')"/>
           <area id="cleveland" shape="poly" coords="643,244,635,251,634,255,652,257,673,254,673,247,656,245,643,244" onclick="getTeam('Cleveland Indians')"/>
@@ -37,7 +37,7 @@
           <area id="miami" shape="poly" coords="720,516,713,528,716,534,711,545,745,546,736,523,728,518,720,516" onclick="getTeam('Miami Marlins')"/>
           <area id="milwaukee" shape="circle" coords="506,196,20" onclick="getTeam('Milwaukee Brewers')"/>
           <area id="philadelphia" shape="poly" coords="738,257,754,270,767,258,763,251,753,247,743,250,738,257" onclick="getTeam('Philadelphia Phillies')"/>
-          <area id="pittsburgh" shape="poly" coords="685,258,684,279,689,279,695,272,699,269,299,262,695,259,685,258" onclick="getTeam('Pittsburg Pirates')"/>
+          <area id="pittsburgh" shape="rect" coords="686,260,702,280" onclick="getTeam('Pittsburg Pirates')"/>
           <area id="sanDiego" shape="circle" coords="148,386,13" onclick="getTeam('San Diego Padres')"/>
           <area id="stLouis" shape="poly" coords="545,306,535,308,530,330,532,337,560,334,559,321,545,306" onclick="getTeam('St. Louis Cardinals')"/>
           <area id="washingtonDC" shape="poly" coords="728,290,719,296,719,300,723,301,722,309,728,312,740,307,744,299,742,288,728,290" onclick="getTeam('Washington Nationals')"/>
@@ -46,6 +46,7 @@
 		  <area id="losAngelesA" shape="poly" coords="100,317,94,325,97,329,91,351,110,351,104,329,108,324,100,317" onclick="getTeam('Los Angeles Angels')"/>
 		  <area id="newYorkM" shape="poly" coords="771,214,763,226,795,224,795,213,771,214" onclick="getTeam('New York Mets')"/>
         </map>
+		<h3 id="sources" onclick="sourcePage()"><u> Sources </u></h3> 
 		</div>
 		<div id="teamInfo" class="col-md-4"> 
 			<h1> Click a logo on the map to see team information. </h1>

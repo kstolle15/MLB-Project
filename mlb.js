@@ -572,3 +572,22 @@ function output(team){
   $("#teamInfo").append(infoDiv).hide().slideDown(2000);
 }
 
+function sourcePage() {
+	var content = $("#content").html();
+	$("#content").empty();
+	var newContent = "<div id='sources'><h2><b> Sources </b></h2>" + 
+		"<p><a href=' ask john for website he got pictures from'>Stadium pictures</a></p>" +
+		"<p><a href='https://en.wikipedia.org/wiki/List_of_current_Major_League_Baseball_stadiums#Current_stadiums'>Stadium information</a></p>" +
+		"<p><a href='https://www.baseball-reference.com'>Manager, hitter, & pitcher stats</a></p>" +
+		"<p><a href='https://www.mapsofworld.com/usa/usa-outline-map.html'>Map of United States</a></p>" +
+		"<p><a href='http://mlb.mlb.com/team/'>Logos on map</a></p>" +
+		"<p><button type='button' class='btn btn-primary' onclick='returnMap()'>Return to map</button></p></div>";
+	$("#content").append(newContent);
+	return;
+}
+
+function returnMap() {
+	content;
+	$("#content").empty();
+	$("#content").append(content);
+}
