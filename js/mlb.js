@@ -571,7 +571,7 @@ function output(team){
       "<tbody><tr><td> Batting Average: " + team.battingAvg + "</td></tr></tbody></table>";
   $("#teamInfo").append(infoDiv).hide().slideDown(2000);
 }
-
+/*
 function sourcePage() {
 	var content = $("#content").html();
 	$("#content").empty();
@@ -590,4 +590,4 @@ function returnMap() {
 	content;
 	$("#content").empty();
 	$("#content").append(content);
-}
+}*/
