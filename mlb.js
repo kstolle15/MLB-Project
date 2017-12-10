@@ -552,9 +552,11 @@ function getTeam(team){
 
 function output(team){
   $("#teamInfo").empty();
-  var infoDiv ="<h2>" + team.team + "</h2>"+
-      "<img src='Real Stadium Pics/" + team.stadiumName + ".jpg' id='stadiumPic'><h4>" + team.stadiumName + ", " + team.stadiumAge + " years old</h4>" +
-      "<table><tbody><tr><td> Location: " + team.location + "</td></tr></tbody></table>" +
+  var infoDiv ="<h2><b>" + team.team + "</b></h2>"+
+      "<img src='Real Stadium Pics/" + team.stadiumName + ".jpg' id='stadiumPic'>" +
+	  "<h4>" + team.stadiumName + "</h4>" +
+	  "<table><tr><td> Location: " + team.location + "</td></tr>" +
+	  "<tbody><tr><td> Open " + team.stadiumAge + " years</td></tr></tbody></table>" +
 	  "<table><tbody><tr><td> Current League: " + team.currentLeague + "</td></tr>" +
       "<tr><td> Playoff Appearances: " + team.playoffAppearences + "</td></tr>" +
       "<tr><td> Pennant Wins: " + team.pennantWins + "</td></tr>" +
@@ -569,29 +571,4 @@ function output(team){
       "<tbody><tr><td> Batting Average: " + team.battingAvg + "</td></tr></tbody></table>";
   $("#teamInfo").append(infoDiv).hide().slideDown(2000);
 }
-/*
-function dosEquipos(city){
- var team = "";
-  if (city === "Chicago"){
-   $("#teamInfo").append("<button type='button' class='btn btn-primary' onclick='getTeam('Chicago Cubs')'>Chicago Cubs</button>");
- }else if (city === "New York"){
-    
-  }else if (city === "San Francisco"){
 
-  }else {
- }
-}   
-
-*/
-/*
-function getName(name){ 
-	return name;
-}
-
-function test(){  
-	$("#teamInfo").empty();
-	var t = "<p>this is a test</p>"; 
-	$("#teamInfo").append(t);
-}
-
-*/
