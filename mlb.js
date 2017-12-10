@@ -198,7 +198,7 @@ var teamInfo = [{
 		},
 		{
 			"team": "New York Yankees",
-			"location": "New York City, NY",
+			"location": "Bronx, NY",
 			"currentLeague": "American League",
 			"stadiumName": "Yankee Stadium",
 			"stadiumAge": 8,
@@ -216,7 +216,7 @@ var teamInfo = [{
 		},
 		{
 			"team": "Tampa Bay Rays",
-			"location": "Tampa. FL",
+			"location": "St. Petersburg, FL",
 			"currentLeague": "American League",
 			"stadiumName": "Tropicana Field",
 			"stadiumAge": 27,
@@ -324,7 +324,7 @@ var teamInfo = [{
 		},
 		{
 			"team": "New York Mets",
-			"location": "New York City, NY",
+			"location": "Queens, NY",
 			"currentLeague": "National League",
 			"stadiumName": "Citi Field",
 			"stadiumAge": 8,
@@ -378,7 +378,7 @@ var teamInfo = [{
 		},
 		{
 			"team": "Los Angeles Angels",
-			"location": "Los Angeles, CA",
+			"location": "Anaheim, CA",
 			"currentLeague": "American League",
 			"stadiumName": "Angel Stadium",
 			"stadiumAge": 51,
@@ -468,7 +468,7 @@ var teamInfo = [{
 		},
 		{
 			"team": "Arizona Diamondbacks",
-			"location": "Pheonix, AZ",
+			"location": "Phoenix, AZ",
 			"currentLeague": "National League",
 			"stadiumName": "Chase Field",
 			"stadiumAge": 19,
@@ -552,47 +552,46 @@ function getTeam(team){
 
 function output(team){
   $("#teamInfo").empty();
-  var infoDiv ="<h3>" + team.team + "</h3>"+
-      "<img src='Real Stadium Pics/" + team.stadiumName + ".jpg' id='stadiumPic'><h5>" + team.stadiumName + ", " + team.stadiumAge + " years </h5>" +
-      "<table><tbody><tr><td> Current League: </td><td>" + team.currentLeague + "</td></tr>" +
-      "<tr><td> Playoff Appearances: </td><td>" + team.playoffAppearences + "</td></tr>" +
-      "<tr><td> Pennant Wins: </td><td>" + team.pennantWins + "</td></tr>" +
-      "<tr><td> World Series Wins: </td><td>" + team.worldSeriesWins + "</td></tr></tbody></table>" +
-      "<table><thead><th> Winningest Manager: </th><th>" + team.winningestManager + "</th></thead>" +
-      "<tbody><tr><td> Years as Manager: </td><td>" + team.yearsAsManager + "</td></tr>" +
-      "<tr><td> Career Wins: </td><td>" + team.careerWins + "</td></tr>" +
-      "<tr><td> Win Percentage: </td><td>" + team.winPercentage + "</td></tr></tbody></table>" +
-      "<table><thead><th> Best Pitcher: </th><th>" + team.bestPitcher + "</th></thead>" +
-      "<tbody><tr><td> ERA: </td><td>" + team.pitcherERA + "</td></tr></tbody></table>" +
-      "<table><thead><th> Best Hitter: </th><th>" + team.bestHitter + "</th></thead>" +
-      "<tbody><tr><td> Batting Average: </td><td>" + team.battingAvg + "</td></tr></tbody></table>";
-  $("#teamInfo").append(infoDiv).hide().fadeIn(2000);
+  var infoDiv ="<h2>" + team.team + "</h2>"+
+      "<img src='Real Stadium Pics/" + team.stadiumName + ".jpg' id='stadiumPic'><h4>" + team.stadiumName + ", " + team.stadiumAge + " years old</h4>" +
+      "<table><tbody><tr><td> Location: " + team.location + "</td></tr></tbody></table>" +
+	  "<table><tbody><tr><td> Current League: " + team.currentLeague + "</td></tr>" +
+      "<tr><td> Playoff Appearances: " + team.playoffAppearences + "</td></tr>" +
+      "<tr><td> Pennant Wins: " + team.pennantWins + "</td></tr>" +
+      "<tr><td> World Series Wins: " + team.worldSeriesWins + "</td></tr></tbody></table>" +
+      "<table><thead><th> Winningest Manager: " + team.winningestManager + "</th></thead>" +
+      "<tbody><tr><td> Years as Manager: " + team.yearsAsManager + "</td></tr>" +
+      "<tr><td> Career Wins: " + team.careerWins + "</td></tr>" +
+      "<tr><td> Win Percentage: " + team.winPercentage + "</td></tr></tbody></table>" +
+      "<table><thead><th> Best Pitcher: " + team.bestPitcher + "</th></thead>" +
+      "<tbody><tr><td> ERA: " + team.pitcherERA + "</td></tr></tbody></table>" +
+      "<table><thead><th> Best Hitter: " + team.bestHitter + "</th></thead>" +
+      "<tbody><tr><td> Batting Average: " + team.battingAvg + "</td></tr></tbody></table>";
+  $("#teamInfo").append(infoDiv).hide().slideDown(2000);
 }
-
-function dosEquipos(city){ 
-$("#teamInfo").empty();
+/*
+function dosEquipos(city){
  var team = "";
-  if (city === "Chicago"){ 
-	var buttons = "<h3>Select the team you would like to see</h3>" + 
-	"<button  id='cubs' type='button' class='btn btn-primary' onclick='getTeam(&quot;Chicago Cubs&quot;)'>Chicago Cubs</button>" + 
-	"<button type='button' class='btn btn-primary' onclick='getTeam(&quot;Chicago White Sox&quot;)'>Chicago White Sox</button>";   
-	$("#teamInfo").append(buttons).hide().slideDown(1000); 
-  } else if(city === "New York"){ 
-	var buttons = "<h3>Select the team you would like to see</h3>" + 
-	"<button  id='cubs' type='button' class='btn btn-primary' onclick='getTeam(&quot;New York Yankees&quot;)'>New York Yankees</button>" + 
-	"<button type='button' class='btn btn-primary' onclick='getTeam(&quot;New York Mets&quot;)'>New York Mets</button>";   
-	$("#teamInfo").append(buttons).hide().slideDown(1000); 
-  }else if (city === "San Francisco"){ 
-	var buttons = "<h3>Select the team you would like to see</h3>" + 
-	"<button  id='cubs' type='button' class='btn btn-primary' onclick='getTeam(&quot;San Francisco Giants&quot;)'>San Fransico Giants</button>" + 
-	"<button type='button' class='btn btn-primary' onclick='getTeam(&quot;Oakland Athletics&quot;)'>Oakland A's</button>";   
-	$("#teamInfo").append(buttons).hide().slideDown(1000); 
-  }else{ 
-	var buttons = "<h3>Select the team you would like to see</h3>" + 
-	"<button  id='cubs' type='button' class='btn btn-primary' onclick='getTeam(&quot;Los Angeles Dodgers&quot;)'>Los Angeles Dodgers</button>" + 
-	"<button type='button' class='btn btn-primary' onclick='getTeam(&quot;Los Angeles Angels&quot;)'>Los Angeles Angels</button>";   
-	$("#teamInfo").append(buttons).hide().slideDown(1000);
-  }
+  if (city === "Chicago"){
+   $("#teamInfo").append("<button type='button' class='btn btn-primary' onclick='getTeam('Chicago Cubs')'>Chicago Cubs</button>");
+ }else if (city === "New York"){
+    
+  }else if (city === "San Francisco"){
+
+  }else {
+ }
+}   
+
+*/
+/*
+function getName(name){ 
+	return name;
 }
 
+function test(){  
+	$("#teamInfo").empty();
+	var t = "<p>this is a test</p>"; 
+	$("#teamInfo").append(t);
+}
 
+*/
