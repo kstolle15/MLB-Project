@@ -542,10 +542,6 @@ var teamInfo = [{
 
 function getTeam(team){  
   var thisTeam;
-  if (team === "Chicago"|| team === "New York"|| team === "San Francisco"|| team === "Los Angeles"){
-    dosEquipos(team); 
-	return;
-  }
   for(var i = 0;i<teamInfo.length;i++){
    if (team === teamInfo[i].team){
      thisTeam = teamInfo[i];
@@ -570,31 +566,33 @@ function output(team){
       "<tbody><tr><td> ERA: </td><td>" + team.pitcherERA + "</td></tr></tbody></table>" +
       "<table><thead><th> Best Hitter: </th><th>" + team.bestHitter + "</th></thead>" +
       "<tbody><tr><td> Batting Average: </td><td>" + team.battingAvg + "</td></tr></tbody></table>";
-  $("#teamInfo").append(infoDiv).hide().slideDown(2000);
+  $("#teamInfo").append(infoDiv).hide().fadeIn(2000);
 }
 
-function dosEquipos(city){
+function dosEquipos(city){ 
+$("#teamInfo").empty();
  var team = "";
-  if (city === "Chicago"){
-   $("#teamInfo").append("<button type='button' class='btn btn-primary' onclick='getTeam('Chicago Cubs')'>Chicago Cubs</button>");
- }/*else if (city === "New York"){
-    
-  }else if (city === "San Francisco"){
-
-  }else {
- }*/
-}   
-
-
-
-function getName(name){ 
-	return name;
-}
-
-function test(){  
-	$("#teamInfo").empty();
-	var t = "<p>this is a test</p>"; 
-	$("#teamInfo").append(t);
+  if (city === "Chicago"){ 
+	var buttons = "<h3>Select the team you would like to see</h3>" + 
+	"<button  id='cubs' type='button' class='btn btn-primary' onclick='getTeam(&quot;Chicago Cubs&quot;)'>Chicago Cubs</button>" + 
+	"<button type='button' class='btn btn-primary' onclick='getTeam(&quot;Chicago White Sox&quot;)'>Chicago White Sox</button>";   
+	$("#teamInfo").append(buttons).hide().slideDown(1000); 
+  } else if(city === "New York"){ 
+	var buttons = "<h3>Select the team you would like to see</h3>" + 
+	"<button  id='cubs' type='button' class='btn btn-primary' onclick='getTeam(&quot;New York Yankees&quot;)'>New York Yankees</button>" + 
+	"<button type='button' class='btn btn-primary' onclick='getTeam(&quot;New York Mets&quot;)'>New York Mets</button>";   
+	$("#teamInfo").append(buttons).hide().slideDown(1000); 
+  }else if (city === "San Francisco"){ 
+	var buttons = "<h3>Select the team you would like to see</h3>" + 
+	"<button  id='cubs' type='button' class='btn btn-primary' onclick='getTeam(&quot;San Francisco Giants&quot;)'>San Fransico Giants</button>" + 
+	"<button type='button' class='btn btn-primary' onclick='getTeam(&quot;Oakland Athletics&quot;)'>Oakland A's</button>";   
+	$("#teamInfo").append(buttons).hide().slideDown(1000); 
+  }else{ 
+	var buttons = "<h3>Select the team you would like to see</h3>" + 
+	"<button  id='cubs' type='button' class='btn btn-primary' onclick='getTeam(&quot;Los Angeles Dodgers&quot;)'>Los Angeles Dodgers</button>" + 
+	"<button type='button' class='btn btn-primary' onclick='getTeam(&quot;Los Angeles Angels&quot;)'>Los Angeles Angels</button>";   
+	$("#teamInfo").append(buttons).hide().slideDown(1000);
+  }
 }
 
 
