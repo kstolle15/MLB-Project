@@ -206,7 +206,7 @@ var teamInfo = [{
 			"yearsAsManager": "1931-1946",
 			"careerWins": 2125,
 			"winPercentage": 0.609,
-			"bestPitcher": "Marioana Rivera",
+			"bestPitcher": "Mariano Rivera",
 			"pitcherERA": 2.21,
 			"bestHitter": "Babe Ruth",
 			"battingAvg": 0.349,
