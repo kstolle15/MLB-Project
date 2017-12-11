@@ -1,3 +1,4 @@
+// JSON object array that hold info for each team
 var teamInfo = [{
 			"team": "Chicago Cubs",
 			"location": "Chicago, IL",
@@ -539,7 +540,7 @@ var teamInfo = [{
 			"worldSeriesWins": 8
 		}];
 
-
+// searches for a given team in the json object array
 function getTeam(team){
   var thisTeam;
   for(var i = 0;i<teamInfo.length;i++){
@@ -550,7 +551,9 @@ function getTeam(team){
   output(thisTeam);
 }
 
+// appends the team info onto the page 
 function output(team){
+	// clears out any existing html in the info div 
   $("#teamInfo").empty();
   var infoDiv ="<h2><b>" + team.team + "</b></h2>"+
       "<img src='Real Stadium Pics/" + team.stadiumName + ".jpg' id='stadiumPic'>" +
@@ -571,23 +574,3 @@ function output(team){
       "<tbody><tr><td> Batting Average: " + team.battingAvg + "</td></tr></tbody></table>";
   $("#teamInfo").append(infoDiv).hide().slideDown(2000);
 }
-/*
-function sourcePage() {
-	var content = $("#content").html();
-	$("#content").empty();
-	var newContent = "<div id='sources'><h2><b> Sources </b></h2>" +
-		"<p><a href='http://ftw.usatoday.com/2016/08/ranking-best-worst-mlb-stadiums-30-petco-wrigley-pnc'>Stadium pictures</a></p>" +
-		"<p><a href='https://en.wikipedia.org/wiki/List_of_current_Major_League_Baseball_stadiums#Current_stadiums'>Stadium information</a></p>" +
-		"<p><a href='https://www.baseball-reference.com'>Manager, hitter, & pitcher stats</a></p>" +
-		"<p><a href='https://www.mapsofworld.com/usa/usa-outline-map.html'>Map of United States</a></p>" +
-		"<p><a href='http://mlb.mlb.com/team/'>Logos on map</a></p>" +
-		"<p><button type='button' class='btn btn-primary' onclick='returnMap()'>Return to map</button></p></div>";
-	$("#content").append(newContent);
-	return;
-}
-
-function returnMap() {
-	content;
-	$("#content").empty();
-	$("#content").append(content);
-}*/
